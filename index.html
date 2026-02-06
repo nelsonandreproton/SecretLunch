@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Member Random Selector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Team Member Random Selector</h1>
+
+  <section>
+    <h2>Create Team</h2>
+    <input id="teamName" placeholder="Team name" />
+    <button onclick="addTeam()">Add Team</button>
+  </section>
+
+  <section>
+    <h2>Teams</h2>
+    <select id="teamSelect" onchange="renderMembers()"></select>
+  </section>
+
+  <section>
+    <h2>Add Member</h2>
+    <input id="memberName" placeholder="Member name" />
+    <button onclick="addMember()">Add Member</button>
+  </section>
+
+  <section>
+    <h2>Members</h2>
+    <ul id="memberList"></ul>
+  </section>
+
+  <section>
+    <button class="select-btn" onclick="selectMembers()">Select Members</button>
+    <pre id="results"></pre>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
