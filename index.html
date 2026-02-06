@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team Member Random Selector</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Selector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Team Member Random Selector</h1>
-  </header>
+    <header class="app-header">
+        <div class="container header-content">
+            <div class="logo">Team<span>Selector</span></div>
+        </div>
+    </header>
 
-  <main>
-    <div class="card">
-      <h2>Create Team</h2>
-      <input id="teamName" placeholder="Team name" />
-      <button onclick="addTeam()">Add Team</button>
-    </div>
+    <main class="container app-body">
+        <!-- Left Column: Management -->
+        <section class="panel management-panel">
+            <h2>Manage Teams</h2>
+            
+            <div class="input-group">
+                <input type="text" id="newTeamName" placeholder="Enter team name...">
+                <button id="addTeamBtn" class="btn btn-primary">Add Team</button>
+            </div>
 
-    <div class="card">
-      <h2>Teams</h2>
-      <select id="teamSelect" onchange="renderMembers()"></select>
-    </div>
+            <div id="teamsContainer" class="teams-list">
+                <!-- Teams will be injected here -->
+            </div>
 
-    <div class="card">
-      <h2>Add Member</h2>
-      <input id="memberName" placeholder="Member name" />
-      <button onclick="addMember()">Add Member</button>
-    </div>
+            <div id="activeTeamArea" class="active-team-area hidden">
+                <h3 id="activeTeamTitle">Team Members</h3>
+                <div class="input-group">
+                    <input type="text" id="newMemberName" placeholder="Enter member name...">
+                    <button id="addMemberBtn" class="btn btn-secondary">Add Member</button>
+                </div>
+                <ul id="membersList" class="members-list">
+                    <!-- Members will be injected here -->
+                </ul>
+            </div>
+        </section>
 
-    <div class="card">
-      <h2>Members</h2>
-      <ul id="memberList"></ul>
-    </div>
+        <!-- Right Column: Action & Results -->
+        <section class="panel action-panel">
+            <h2>Selection</h2>
+            <button id="selectMembersBtn" class="btn btn-large">Select Members</button>
+            <div id="resultsContainer" class="results-list"></div>
+        </section>
+    </main>
 
-    <div class="card">
-      <button class="select-btn" onclick="selectMembers()">Select Members</button>
-      <pre id="results"></pre>
-    </div>
-  </main>
-
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
